@@ -1,0 +1,25 @@
+﻿@page
+@model CinemaWebApp.Pages.CreateMovieModel
+@{
+}
+<p>@Model.Message</p>
+<h2> Add New Movie</h2>
+<form method="post">
+    <div class="mb-3">
+        <label for="inputTitle" class="form-label">Title</label>
+        <input type="text" class="form-control" id="inputTitle" name="Title" >
+     </div>
+    <div class="mb-3">
+        <label for="inputDirector" class="form-label">Director</label>
+        <input type="text" class="form-control" id="inputDirector" name="Director">
+    </div>
+    <div class="mb-3">
+     <label for="inputStyle" class="form-label">Style</label>
+        <input type="text" class="form-control" id="inputStyle" name="Style">
+    </div>
+    <div class="mb-3">
+   <label for="inputDescription" class="form-label">Description</label>
+        <input type="text" class="form-control" id="inputDescription" name="ShortDescription">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

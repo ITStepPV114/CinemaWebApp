@@ -1,0 +1,39 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Cinema</h1>
+  </div>
+<p><a class="link-opacity-100" href="./CreateMovie">Create</a></p>
+@*<p><a class="link-opacity-100" href="CreateMovie">Create</a></p>*@
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Title</th>
+            <th scope="col">Director</th>
+            <th scope="col">Style</th>
+            <th scope="col">Info Detail</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var movie in Model.Movies){
+        <tr>
+            <th scope="row">@movie.Id</th>
+            <td>@movie.Title</td>
+            <td>@movie.Director</td>
+            <td>@movie.Style</td>
+                @*/ /InfoMovie/id*@
+                @*/ /InfoMovie?id=*@
+                <td><a asp-page="InfoMovie" asp-route-id=@movie.Id>About info</a></td>
+                    <td><a href="./EditMovie/@movie.Id">Edit</a></td>
+        </tr>
+        }
+    </tbody>
+</table>

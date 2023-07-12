@@ -1,0 +1,34 @@
+﻿@page "{id:int}"
+@model CinemaWebApp.Pages.InfoMovieModel
+@{
+}
+<h1 class="text-center">About info movies</h1>
+<p>@Model.Message</p>
+<ul class="list-group">
+  <li class="list-group-item">@Model.MovieInfo.Title</li>
+  <li class="list-group-item">@Model.MovieInfo.Director</li>
+  <li class="list-group-item">@Model.MovieInfo.Style</li>
+  <li class="list-group-item">@Model.MovieInfo.ShortDescription</li>
+ </ul>
+
+<table class="table table-striped  caption-top">
+    <caption class="fs-3 fw-bolder text-center">Sessions</caption>
+  <thead>
+     <tr>
+      <th scope="col">Id</th>
+      <th scope="col">DateSession</th>
+      <th scope="col">TimeSession</th>
+
+    </tr>
+  </thead>
+  <tbody>
+      @foreach(var session in Model.MovieInfo.Sessions){
+        <tr>
+          <th>@session.Id</th>
+          <td>@session.DateSession.ToShortDateString()</td>
+          <td>@session.TimeSession.ToShortTimeString()</td>
+        </tr>
+      }
+  </tbody>
+</table>
+<p class="text-end"><a class="link-opacity-100" asp-page="Index">Back</a></p>
