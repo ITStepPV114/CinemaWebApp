@@ -15,9 +15,15 @@ namespace CinemaWebApp.Pages
 
         //}
 
-        public void OnGet()
+        public void OnGet(string? searchTitle)
         {
-            Movies = MovieService.GetAll();
+            if (searchTitle == null)
+            {
+                Movies = MovieService.GetAll();
+            }
+            else {
+                Movies = MovieService.SearchMovie(searchTitle);
+            }
         }
 
 

@@ -1,5 +1,5 @@
-﻿@page "{id:int}"
-@model CinemaWebApp.Pages.CreateModel
+﻿@page "{id:int?}"
+@model CinemaWebApp.Pages.Sessions.CreateModel
 @{
 }
 <p>@Model.MovieInfo?.Title</p>
@@ -11,9 +11,11 @@
      </div>
     <div class="mb-3">
         <label for="inputTimeSession" class="form-label">TimeSession</label>
-        <input type="date" class="form-control" id="inputTimeSession" name="TimeSession">
+        <input type="time" class="form-control" id="inputTimeSession" name="TimeSession">
     </div>
- 
+    <div class="mb-3">
+         <input  class="form-control" id="inputId" name="IdMovie" type="hidden" value=@Model.IdMovie>
+     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 
