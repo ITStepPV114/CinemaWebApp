@@ -25,6 +25,7 @@ namespace CinemaWebApp.Service
             if (index == -1) return;
             Movies[index] = movie;
         }
+
         public static void FullData()
         {
            

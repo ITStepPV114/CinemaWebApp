@@ -9,6 +9,8 @@ namespace CinemaWebApp.Pages
     public class EditMovieModel : PageModel
     {
         public Movie? EditMovie { get; set; }
+        //~/EditMovie?id=1
+        //~/EditMovie/1
         public IActionResult OnGet(int id)
         {
             EditMovie = MovieService.Get(id);

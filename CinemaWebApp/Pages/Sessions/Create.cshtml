@@ -1,0 +1,20 @@
+﻿@page "{id:int}"
+@model CinemaWebApp.Pages.CreateModel
+@{
+}
+<p>@Model.MovieInfo?.Title</p>
+<h2> Add New Session</h2>
+<form method="post">
+    <div class="mb-3">
+        <label for="inputDataSession" class="form-label">DataSession</label>
+        <input type="date" class="form-control" id="inputDataSession" name="DateSession">
+     </div>
+    <div class="mb-3">
+        <label for="inputTimeSession" class="form-label">TimeSession</label>
+        <input type="date" class="form-control" id="inputTimeSession" name="TimeSession">
+    </div>
+ 
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+<p>@Model.Message</p>
