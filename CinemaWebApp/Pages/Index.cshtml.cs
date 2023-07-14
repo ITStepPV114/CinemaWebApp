@@ -26,7 +26,11 @@ namespace CinemaWebApp.Pages
             }
         }
 
+        public IActionResult OnPost(int id) {
+            MovieService.Delete(id);
 
+            return RedirectToPage("Index");
+        }
 
     }
 }

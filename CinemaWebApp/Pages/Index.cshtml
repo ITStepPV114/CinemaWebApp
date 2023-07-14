@@ -8,7 +8,7 @@
     <h1 class="display-4">Cinema</h1>
   </div>
 <form method="get">
-     <input type="text" name="searchTitle">
+     <input  type="text" name="searchTitle">
      <button type="submit" class="btn btn-primary">Search</button>
 </form>
 <p><a class="link-opacity-100" href="./CreateMovie">Create</a></p>
@@ -37,6 +37,15 @@
                 @*/ /InfoMovie?id=*@
                 <td><a asp-page="InfoMovie" asp-route-id=@movie.Id>About info</a></td>
                 <td><a href="./EditMovie/@movie.Id">Edit</a></td>
+                <td>
+               @*     <form method="post">
+                        <input type="hidden" name="id" value="@movie.Id" >
+                        <button type="submit" class="btn btn-primary">Delete</button>
+                    </form>*@
+                       <form method="post" asp-route-id="@movie.Id">
+                           <button type="submit" class="btn btn-primary">Delete</button>
+                       </form>
+                </td>
         </tr>
         }
     </tbody>

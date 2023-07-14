@@ -31,6 +31,14 @@ namespace CinemaWebApp.Service
             Movies[index] = movie;
         }
 
+        public static void Delete(int id)
+        {
+            var movie = Get(id);
+            if (movie is null) return;
+            Movies.Remove(movie);
+        }
+
+
         public static void AddSessionToMovie(int idMovie, Session session)
         {
             int index = Movies.FindIndex(x => x.Id == idMovie);
